@@ -2,8 +2,8 @@
 USERS="ZZP-DMU"
 
 ghub(){
-    if [[ $1 == "-ssh" ]];then curl "https://api.github.com/users/$USERS/repos" | grep ssh_url ;
-    elif [[ $1 == "-https" ]];then curl "https://api.github.com/users/$USERS/repos" | grep clone_url ;
+    if [[ $1 == "-ssh" ]];then curl "https://api.github.com/users/$USERS/repos" | json_pp | grep ssh_url ;
+    elif [[ $1 == "-https" ]];then curl "https://api.github.com/users/$USERS/repos" | json_pp | grep clone_url ;
     else echo "invalid parameter";
     fi
 }
