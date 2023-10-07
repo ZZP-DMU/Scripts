@@ -1,5 +1,5 @@
 # the users u want to search!
-USERS="ZZP-DMU"
+USERS=""
 
 ghub(){
     if [[ $1 == "-ssh" ]];then curl "https://api.github.com/users/$USERS/repos" | json_pp | grep ssh_url ;

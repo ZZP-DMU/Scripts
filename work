@@ -1,6 +1,6 @@
 
 #Users Path Setting
-USERS_PATH="/Users/zzp/workspace"
+USERS_PATH=""
 
 work(){
 	if [[ $1 == "" ]];then cd "$USERS_PATH";
