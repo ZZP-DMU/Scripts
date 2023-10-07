@@ -1,0 +1,11 @@
+# the users u want to search!
+USERS="ZZP-DMU"
+
+ghub(){
+    if [[ $1 == "-ssh" ]];then curl "https://api.github.com/users/$USERS/repos" | grep ssh_url ;
+    elif [[ $1 == "-https" ]];then curl "https://api.github.com/users/$USERS/repos" | grep clone_url ;
+    else echo "invalid parameter";
+    fi
+}
+
+ghub $1

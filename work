@@ -1,0 +1,15 @@
+
+#Users Path Setting
+USERS_PATH="uses_path"
+
+work(){
+	if [[ $1 == "" ]];then cd "$USERS_PATH";
+    else cd "$USERS_PATH/$1";
+    fi
+}
+
+#the user should use the command `source work <path>` 
+#instead of the command'./work <path>'.my suggestion is
+#put the work funciton into the `.zshrc` or `.bashrc` file.
+work $1
+
