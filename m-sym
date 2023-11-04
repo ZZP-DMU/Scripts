@@ -1,0 +1,66 @@
+#!/Users/zzp/workspace/app/math-sympy/bin/python3
+from sympy import *
+
+#import for generate mathml fomat result
+from sympy.printing.mathml import print_mathml
+
+#import for file operation
+import os
+
+#html format for result visualization
+#html head portion
+html_head="<!DOCTYPE html> \
+<html> \
+   <head> \
+      <meta charset=\"UTF-8\"> \
+      <title>result</title> \
+   </head> \
+   <body>"
+
+#html end portion
+html_end="</body>\
+</html>"
+
+#mathml environment 
+math_env_head="<math xmlns=\"http://www.w3.org/1998/Math/MathML\" > "
+math_env_end="</math>"
+
+#set the result.html storage path
+path = os.getcwd()
+path = path+"/result.html"
+
+#delete the old result.html before run the script,and create a new result.html
+#since open with key word 'w' has this funciton
+fd = open(path,'w')
+
+fd.write(html_head)
+
+#the function to write file
+def formular_w(file,str):
+    str=math_env_head + str + math_env_end
+    file.write(str)
+
+
+################################################################################
+#-----------------------------------User Space---------------------------------#
+################################################################################
+
+
+
+
+x = Symbol('x')
+str1 = mathml(Integral((sqrt(1/x**2)+1), x), printer='presentation')
+
+
+#write the formular to the result.html
+formular_w(fd,str1)
+
+
+
+################################################################################
+#-----------------------------------Space end----------------------------------#
+################################################################################
+
+#write the html end segment to the result.html and close the result file
+fd.write(html_end)
+fd.close()
