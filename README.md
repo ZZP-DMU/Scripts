@@ -22,3 +22,10 @@ a script to get a user's repos on github.there are two kind of url we can get,`s
 
 ### environment
 the `USERS` key word is custom setting represent the github username.
+
+## m-sym
+### description
+generating mathml type results while using sympy to calculate.
+
+### usage
+- just write the code in userspace and put the result string into the string list,then the html file will generate in the workspace path.
